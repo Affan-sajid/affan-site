@@ -37,6 +37,14 @@ const FIREBASE_SERVICE_ACCOUNT = process.env.FIREBASE_SERVICE_ACCOUNT;
 const FIREBASE_PROJECT_ID = process.env.FIREBASE_PROJECT_ID;
 const COLLECTION = process.env.FIRESTORE_COLLECTION?.trim() || "Writings";
 
+function normalizeProjectId(value) {
+  if (!value) return value;
+  const trimmed = value.trim();
+  const match = trimmed.match(/^projects\/([^/]+)\/databases\/\(default\)$/);
+  if (match) return match[1];
+  return trimmed;
+}
+
 // ─────────────────────────────────────────────
 // Firebase init
 // ─────────────────────────────────────────────
@@ -50,7 +58,8 @@ const COLLECTION = process.env.FIRESTORE_COLLECTION?.trim() || "Writings";
 
 
 function initFirebase() {
-  if (!FIREBASE_PROJECT_ID) {
+  const projectId = normalizeProjectId(FIREBASE_PROJECT_ID);
+  if (!projectId) {
     throw new Error("FIREBASE_PROJECT_ID is not set in .env");
   }
 
@@ -71,7 +80,7 @@ function initFirebase() {
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    projectId: FIREBASE_PROJECT_ID,
+    projectId,
   });
 
   return admin.firestore();
