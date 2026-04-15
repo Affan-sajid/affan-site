@@ -50,17 +50,24 @@ const COLLECTION = process.env.FIRESTORE_COLLECTION?.trim() || "Writings";
 
 
 function initFirebase() {
-  if (!FIREBASE_SERVICE_ACCOUNT) {
-    throw new Error(
-      "FIREBASE_SERVICE_ACCOUNT is not set in .env\n" +
-        "Get it from: Firebase Console → Project Settings → Service Accounts → Generate new private key"
-    );
-  }
   if (!FIREBASE_PROJECT_ID) {
     throw new Error("FIREBASE_PROJECT_ID is not set in .env");
   }
 
-  const serviceAccount = JSON.parse(readFileSync(FIREBASE_SERVICE_ACCOUNT, "utf8"));
+  // CI: pass raw JSON via FIREBASE_SERVICE_ACCOUNT_JSON
+  // Local: pass file path via FIREBASE_SERVICE_ACCOUNT
+  const rawJson = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+  let serviceAccount;
+  if (rawJson) {
+    serviceAccount = JSON.parse(rawJson);
+  } else if (FIREBASE_SERVICE_ACCOUNT) {
+    serviceAccount = JSON.parse(readFileSync(FIREBASE_SERVICE_ACCOUNT, "utf8"));
+  } else {
+    throw new Error(
+      "Set FIREBASE_SERVICE_ACCOUNT_JSON (raw JSON string) or FIREBASE_SERVICE_ACCOUNT (file path) in .env\n" +
+        "Get it from: Firebase Console → Project Settings → Service Accounts → Generate new private key"
+    );
+  }
 
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
