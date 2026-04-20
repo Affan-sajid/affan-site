@@ -8,8 +8,11 @@ export default function Features({ light }) {
         </p>
       </div>
 
-      <div className="py-16 text-center">
-        <p className={`text-[13px] ${light ? 'text-[#aaa]' : 'text-[#444]'}`}>Coming soon.</p>
+      <div className="py-12">
+        <p className={`text-[14px] leading-relaxed max-w-lg ${light ? 'text-[#555]' : 'text-[#888]'}`}>
+          I use this space for curated tools, ideas, people, and work worth a closer look. Short
+          write-ups and links are not live yet — I&apos;m adding them soon. Check back later.
+        </p>
       </div>
     </main>
   )

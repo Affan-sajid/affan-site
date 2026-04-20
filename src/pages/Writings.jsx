@@ -11,8 +11,9 @@ export default function Writings({ light }) {
     <main className="max-w-2xl mx-auto px-8 pb-24">
       <div className="mb-10">
         <h1 className={`text-lg font-medium mb-2 ${titleText}`}>Writings</h1>
-        <p className={`text-[13px] ${mutedText}`}>
-          Ideas, observations, and things I&apos;m working through.
+        <p className={`text-[13px] leading-relaxed ${mutedText}`}>
+          Ideas, observations, and things I&apos;m working through. Deeper sync with my Notion database is
+          coming soon so new pieces can land here automatically.
         </p>
       </div>
 
@@ -22,13 +23,17 @@ export default function Writings({ light }) {
         )}
 
         {error && (
-          <p className="text-[14px] text-red-400">
-            Failed to load writings. Check your Firebase config.
+          <p className={`text-[14px] leading-relaxed ${mutedText}`}>
+            Writings couldn&apos;t load right now. Notion-backed publishing is coming soon — check back
+            later. (If you&apos;re the site owner, confirm Firebase / Firestore access.)
           </p>
         )}
 
         {!loading && !error && writings.length === 0 && (
-          <p className={`text-[14px] ${mutedText}`}>Nothing published yet.</p>
+          <p className={`text-[14px] leading-relaxed ${mutedText}`}>
+            Syncing with my Notion database is coming soon — check back later. Nothing is published here
+            yet.
+          </p>
         )}
 
         {[...writings]

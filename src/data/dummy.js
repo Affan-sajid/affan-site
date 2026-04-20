@@ -63,38 +63,13 @@ export const posts = [
 export const projects = [
   {
     id: 1,
-    slug: 'spiderman-into-the-valentine',
-    title: 'Spiderman-Into-The-Valentine',
-    description:
-      'A playful browser experiment blending comic panels with a minimal valentine narrative. Built to learn motion and layout in the DOM.',
-    created: 'Feb 2026',
-    tags: ['TypeScript', 'HTML'],
-    github: 'https://github.com/example/spiderman-valentine',
-    live: 'https://example.com/spiderman-valentine',
-    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png',
-    status: 'shipped',
-    content: `## What it is
-
-A single-page experiment: comic-style panels, light **CSS motion**, and a tiny narrative loop. No framework beyond what the page needs.
-
-## Why I built it
-
-I wanted to practice **layout + timing** without reaching for animation libraries. The valentine hook was arbitrary — constraints make experiments finish.
-
-## Stack
-
-- TypeScript for small modules and safer DOM touches
-- Plain HTML/CSS for structure and keyframes`,
-  },
-  {
-    id: 2,
     slug: 'context-engine',
     title: 'Context Engine',
     description:
       'A memory layer for AI assistants. Stores, indexes, and surfaces relevant context across sessions without bloating the prompt.',
     created: 'Mar 2026',
     tags: ['AI', 'Python', 'Vector DB'],
-    github: 'https://github.com/example/context-engine',
+    github: '#',
     status: 'active',
     content: `## Problem
 
@@ -109,51 +84,5 @@ Assistants forget everything between sessions unless you paste the same context 
 ## Status
 
 Active — tuning retrieval and pruning so answers stay grounded without noisy dumps.`,
-  },
-  {
-    id: 3,
-    title: 'Thought Log',
-    description:
-      'A daily reasoning journal in your terminal. Prompts you with a question, stores answers, and resurfaces past entries.',
-    created: 'Feb 2026',
-    live: 'https://example.com/thought-log',
-    status: 'shipped',
-  },
-  {
-    id: 4,
-    title: 'Signal',
-    description:
-      'Personal feed aggregator. No algorithm, no noise — just curated sources delivered quietly.',
-    created: 'Jan 2026',
-    tags: ['RSS', 'React', 'Node.js'],
-    github: 'https://github.com/example/signal',
-    live: 'https://signal.example.com',
-    thumbnail: '/IMG_4176.jpeg',
-    status: 'shipped',
-  },
-  {
-    id: 5,
-    title: 'Night Transit',
-    description:
-      'Generative city skylines from SVG and CSS. No canvas — just layers, blur, and a lot of gradients.',
-    created: 'Dec 2025',
-    tags: ['CSS', 'SVG'],
-    live: 'https://example.com/night-transit',
-  },
-  {
-    id: 6,
-    title: 'Ledger Lite',
-    description:
-      'Double-entry bookkeeping in a spreadsheet-shaped UI. Local-first; exports to CSV.',
-    created: 'Nov 2025',
-    github: 'https://github.com/example/ledger-lite',
-  },
-  {
-    id: 7,
-    title: 'Micro Experiments',
-    description:
-      'A collection of small standalone experiments — logic probes, UI explorations, and ideas too small for a full repo.',
-    created: 'Ongoing',
-    status: 'ongoing',
   },
 ];
