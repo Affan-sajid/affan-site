@@ -69,7 +69,6 @@ export const projects = [
       'Gesture-powered assistive communication. Draw words in the air with a wand-shaped device, and it translates them into spoken sentences in real time using IMU sensors, a CNN classifier, and an LLM.',
     created: 'Apr 2026',
     tags: ['Python', 'PyTorch', 'Arduino', 'ML', 'Assistive Tech'],
-    github: 'https://github.com/Affan-sajid/airtalk',
     status: 'shipped',
     content: `## What it is
 
@@ -174,6 +173,8 @@ of continuous Teeline air-writing and a sequence-to-sequence architecture. The a
 designed at the hackathon but needs dedicated time to build properly.
 
 Hardware gets smaller next. The WiFi UDP layer is architecturally complete. The cable goes away
-once latency on the ESP32 power-save settings is tuned.`,
+once latency on the ESP32 power-save settings is tuned.
+
+Will share the repo soon.`,
   },
 ];
