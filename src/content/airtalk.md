@@ -7,6 +7,8 @@ commodity hardware.
 
 Built at the Google Physical AI Hackathon 2026 with collaborator Sidharth.
 
+![First Prize at Google Physical AI Hackathon, Kochi](/images/airtalk/prize.jpg)
+
 ## The problem
 
 Over 430 million people worldwide are deaf, hard of hearing, or speech-impaired. For many, sign
@@ -29,6 +31,8 @@ word list is sent to an LLM for sentence reconstruction and the result is spoken
 No camera, no interpreter, one hand. It works in the dark, in a hospital, in a crowded room, or
 in complete silence.
 
+![Hardware prototype — Seeed XIAO + Adafruit ISM330DHCX wired up](/images/airtalk/hardware.jpeg)
+
 ## Gesture vocabulary
 
 The gesture system is inspired by Teeline shorthand, a writing system developed for journalists
@@ -50,6 +54,16 @@ the stroke pixels, the crop is padded and resized to 64x64, then normalised. The
 is the most important one. It means the model sees the same stroke shape regardless of how large or
 small the user drew the gesture, or where on the canvas it landed.
 
+![Augmented training samples after bounding-box crop](/images/airtalk/training-samples.jpeg)
+
+![Training curves — loss and accuracy across both phases](/images/airtalk/training-curves.jpeg)
+
+![Confusion matrix — 84.4% test accuracy across 10 word classes](/images/airtalk/confusion-matrix.jpeg)
+
+![Sample test predictions — green correct, red wrong](/images/airtalk/test-predictions.jpeg)
+
+![Training notebook — MobileNetV2 air-writing classifier](/images/airtalk/notebook.jpeg)
+
 ## Engineering decisions worth noting
 
 **Per-press calibration.** Early firmware calibrated on startup and required a two-second hold.
@@ -66,6 +80,8 @@ drawing speed.
 adds latency and API dependency. A shortcut dictionary uses Python frozenset keys so words like
 {we, not, communicate, mouth} match regardless of the order they were drawn. No enforced word
 order is the right default for air-writing.
+
+![Firmware running in Arduino IDE — single snprintf output, per-press calibration](/images/airtalk/firmware.jpeg)
 
 ## Stack
 

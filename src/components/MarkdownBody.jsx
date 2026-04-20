@@ -74,6 +74,21 @@ export default function MarkdownBody({ light, children }) {
       )
     },
     pre: ({ children: c }) => <pre className={`mb-5 p-4 rounded-md border overflow-x-auto ${preBg}`}>{c}</pre>,
+    img: ({ src, alt }) => (
+      <span className="block my-8">
+        <img
+          src={src}
+          alt={alt || ''}
+          className={`w-full rounded-lg border object-cover ${light ? 'border-[#e0e0dc]' : 'border-[#2a2a2a]'}`}
+          loading="lazy"
+        />
+        {alt && (
+          <span className={`block text-center text-[12px] mt-2 ${light ? 'text-[#999]' : 'text-[#555]'}`}>
+            {alt}
+          </span>
+        )}
+      </span>
+    ),
   }
 
   return (
