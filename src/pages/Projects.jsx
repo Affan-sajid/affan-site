@@ -142,7 +142,7 @@ export default function Projects({ light }) {
       </div>
 
       <p className={`text-[13px] leading-relaxed mt-10 ${light ? 'text-[#888]' : 'text-[#666]'}`}>
-        I have a few more projects I have not had time to write up yet. Check back tomorrow. ;)
+        I have a few more projects I have not had time to write up yet. Give it a day or two. ;)
       </p>
     </main>
   )

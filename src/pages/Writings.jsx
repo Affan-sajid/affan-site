@@ -13,7 +13,7 @@ export default function Writings({ light }) {
 
       <p className={`text-[14px] leading-relaxed ${mutedText}`}>
         I have written quite a bit but have not synced it up here yet. Working on piping it in from
-        Notion. Check back tomorrow.
+        Notion. More soon.
       </p>
     </main>
   )

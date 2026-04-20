@@ -10,7 +10,7 @@ export default function Features({ light }) {
 
       <div className="py-12">
         <p className={`text-[14px] leading-relaxed max-w-lg ${light ? 'text-[#555]' : 'text-[#888]'}`}>
-          Got some things to add here. Working on it. Check back soon.
+          Got some things to add here. Working on it. Stay tuned.
         </p>
       </div>
     </main>
