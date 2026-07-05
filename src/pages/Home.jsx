@@ -83,7 +83,7 @@ export default function Home({ light }) {
           <EmailIcon />
           <span>Email</span>
         </a>
-        <a href="https://x.com/Affan_Sajid_" target="_blank" rel="noreferrer" className={`flex items-center gap-2 text-[13px] transition-colors ${contactColor}`}>
+        <a href="https://x.com/affansajid_" target="_blank" rel="noreferrer" className={`flex items-center gap-2 text-[13px] transition-colors ${contactColor}`}>
           <TwitterIcon />
           <span>Twitter/X</span>
         </a>
