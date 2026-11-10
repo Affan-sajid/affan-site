@@ -23,3 +23,9 @@ creds.json
 *.njsproj
 *.sln
 *.sw?
+
+# Large media (TV rips, screen recordings) — keep out of git
+*.mkv
+*.mp4
+*.avi
+*.mov
